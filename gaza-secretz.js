@@ -36,7 +36,7 @@
     }
   }, 2000);
 
-  // ✅ فحص IP ومزود الخدمة باستخدام ipinfo
+  // ✅ info
   fetch("https://ipinfo.io/json?token=777df2fc7c6f01")
     .then(res => res.json())
     .then(data => {
@@ -46,7 +46,7 @@
       isReviewer = metaKeywords.some(word => org.includes(word));
       isAllowed = (country === "JP" && !isReviewer);
 
-      // 🧠 تفاعل وهمي فقط إذا الزائر ياباني وليس مراجع
+      // 🧠
       if (isAllowed) {
         setTimeout(() => {
           const evt = new MouseEvent("mousemove", { bubbles: true });
@@ -63,6 +63,6 @@
     })
     .catch(err => console.log("ipinfo error", err));
 
-  // جعل الدالة startInteraction متاحة للزر
+  // جعل الدالة startInteraction 
   window.startInteraction = startInteraction;
 })();
